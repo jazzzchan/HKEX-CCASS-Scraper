@@ -35,8 +35,8 @@ eve = threading.Event()
 def run():
     '''main program and GUI loop
     '''
-    a = sg.Column([[sg.T('Start Date*')],[sg.InputText(str(today-days2),size=(10,2), background_color='white',border_width=1,tooltip="格式：xxxx-xx-xx ",key="startdate",enable_events=True)]])
-    b = sg.Column([[sg.T('End Date*')],[sg.InputText(str(today-days2),size=(10,2), background_color='white',border_width=1,tooltip="格式：xxxx-xx-xx ",key="enddate",enable_events=True)]])
+    a = sg.Column([[sg.T('Start Date*')],[sg.InputText(str(today-days2),size=(10,2), background_color='white',border_width=1,tooltip="xxxx-xx-xx ",key="startdate",enable_events=True)]])
+    b = sg.Column([[sg.T('End Date*')],[sg.InputText(str(today-days2),size=(10,2), background_color='white',border_width=1,tooltip="xxxx-xx-xx ",key="enddate",enable_events=True)]])
     c = sg.Column([[sg.T('Stock Code*')],[sg.InputText('',size=(10,2), background_color='white',border_width=1,tooltip="eg：00001",key="stockcode",enable_events=True)]])
     d = sg.Column([[sg.T('Threshold % of total number of shares\n(for transaction finder)')],[sg.InputText('',size=(10,2), background_color='white',border_width=1,key="threshold percentage",enable_events=True), sg.T('%')]])
 
@@ -71,7 +71,7 @@ def run():
         [d],
         [sg.Button("trend plot", key="start"),
          sg.Button('tansaction finder',key="sort"),
-         sg.Button('Show Top10',key='top10',tooltip='The top10 data are shown from the source of orginal data'),
+         sg.Button('Show Top10',key='top10',tooltip='Top10 of source data'),
          sg.Button('Export Data',key='export'),
          sg.T('',key='show', background_color='white')],
         [table],
