@@ -108,7 +108,7 @@ def run():
             if df is None:
                 sg.Popup('Please click the [trend plot] button to get the data first ', auto_close=True, auto_close_duration=2)
                 continue
-            df = df_original[df_original['Threshold % of Total']>=float(value['threshold percentage'])]
+            df = df_original[df_original['Threshold % of Total']>float(value['threshold percentage'])]
             table_value = [i for i in df.values.tolist()]
             window['table'].update(values=table_value)
             window['show'].update('Data is sorted')
