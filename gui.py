@@ -87,7 +87,6 @@ def run():
     while True:
         event, value = window.read()
         if event == "export":
-
             if df is None:
                 window['show'].update('Please get data first')
                 continue
@@ -112,7 +111,6 @@ def run():
             table_value = [i for i in df.values.tolist()]
             window['table'].update(values=table_value)
             window['show'].update('Data is sorted')
-
 
         if event == 'top10':
             if df is None:
@@ -143,7 +141,6 @@ def run():
 
         if event == "start":
             if value['startdate'] != '' and value['enddate'] != '' and value['stockcode'] != '':
-
                 stop = not stop
                 if not stop:
                     window['start'].update("stop")
@@ -156,26 +153,20 @@ def run():
             else:
                 sg.popup("please fill up the necessary content")
 
-
         if event == 'result':
             stop = True
             window['start'].update('trend plot')
-
             if value['result'] == []:
                 window['show'].update('No data qulifiled')
-
             df = pd.DataFrame(value['result'], columns=['Date','Participant ID','Participant Name', 'Address', 'Shareholding', 'Threshold % of Total'])
             df['Shareholding'] = df['Shareholding'].astype(dtype='float')
             df['Threshold % of Total'] = df['Threshold % of Total'].astype(dtype='float')
-
             df_original = df.copy()
-
             table_value = [i for i in df.values.tolist()]
             window['table'].update(values=table_value)
 
-
-        if event == "message":
-            window['show'].update(value['message'])
+#        if event == "message":
+#            window['show'].update(value['message'])
 
 
         if event in [None, "quit"]:
