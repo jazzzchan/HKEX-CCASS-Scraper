@@ -36,7 +36,6 @@ class Function:
 
     def get_arguments(self):
         url = "https://www3.hkexnews.hk/sdw/search/searchsdw.aspx"
-
         headers = {
             'Host': 'www3.hkexnews.hk',
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
@@ -62,7 +61,6 @@ class Function:
         date_form = date.replace('-','/')
         url = "https://www3.hkexnews.hk/sdw/search/searchsdw.aspx"
         payload = f"__EVENTTARGET=btnSearch&__EVENTARGUMENT=&__VIEWSTATE={self.__VIEWSTATE}&__VIEWSTATEGENERATOR={self.__VIEWSTATEGENERATOR}&today={self.today}&sortBy=shareholding&sortDirection=desc&alertMsg=&txtShareholdingDate={date_form}&txtStockCode={code}&txtStockName=&txtParticipantID=&txtParticipantName=&txtSelPartID="
-
         headers = {
             'Host': 'www3.hkexnews.hk',
             'origin': 'https://www3.hkexnews.hk',
@@ -71,7 +69,6 @@ class Function:
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'referer': 'https://www3.hkexnews.hk/sdw/search/searchsdw.aspx'
         }
-
         try:
             response = requests.request("POST", url, headers=headers, data=payload, verify=False,timeout=5)
         except:
@@ -85,7 +82,6 @@ class Function:
         for data in data_list:
             info = {}
             info['Date'] = date
-
             try:
                 info['Participant ID'] = data.xpath('.//td[@class="col-participant-id"]/div[@class="mobile-list-body"]/text()')[0]
             except:
@@ -113,7 +109,6 @@ class Function:
     def run(self):
         day = get_days(self.value['startdate'], self.value['enddate'])
         result = self.get_arguments()
-
         if result == 'error':
             return
 
@@ -122,11 +117,9 @@ class Function:
         time.sleep(2)
         self.DATA = []
         for i in range(day+1):
-
             date_str = str(date)
             self.window.write_event_value('message', 'Getting %s data......'%date_str)
             self.get_data(date_str, code=self.value['stockcode'])
-
             date = date - timedelta(days=1)
 
         self.window.write_event_value('message', 'Finished')
