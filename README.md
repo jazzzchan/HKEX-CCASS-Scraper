@@ -10,4 +10,5 @@ Updated on 8th July 2022
 
 4. Trying to convert the above .py to a html file
 
-# python script can be rendered into .exe by pyinstaller
+Alternative:
+5 zip python scripts into .exe by pyinstaller
