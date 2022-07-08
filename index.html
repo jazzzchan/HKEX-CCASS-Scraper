@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul 7 21:12:45 2022
+
+@author: jessie chen
+"""
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="CCASS_header" class = "noindex">
+        <h1>CCASS Shareholding Search</h1>
+        <p class="lead">Connect to underlying database https://www.hkexnews.hk/sdw/search/searchsdw.aspx</p>
+    </div>
+    <form name = "form1" action="/search" method="post" id = "form1" style = "text-align:left;" target="dummyframe">
+        <div class="container content-container">
+            <section class = "ccass-search-bar">
+                <div class = "form-input-text">
+                    <li class="form-input startDate">
+                        <label for="inputDate">Start Date</label>
+                        <input type="text" name="txtstartDate" placeholder="xxxx-xx-xx"></input>
+                    </li>
+                    <li class="form-input endDate">
+                        <label for="inputDate">End Date</label>
+                        <input type="text" name="txtendDate" placeholder="xxxx-xx-xx"></input>
+                    </li>
+                    <li class="form-input stockCode">
+                        <label for="inputStock">Stock Code</label>
+                        <input type="text" name="txtstockCode"></input>
+                    </li>
+                    <li class="for-input threshold">
+                        <label for="threshold %">Threshold %</label>
+                        <input type="text" name="txtThreshold"></input>
+                    </li>
+                </div>
+                <div class="buttonGroup">
+                    <a id="trendPlot" title="TrendPlot" class="btn-blue">trend plot</a>
+                    <a id="transaction finder" title="TransactionSearch" class="btn-blue">transaction plot</a>
+                </div>
+            </section>
+        </div>
+    </form>
+    
+</body>
+</html>
+                
