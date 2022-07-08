@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <body>
     <base href="https://www3.hkexnews.hk/sdw/search/searchsdw.aspx">
     <div id="CCASS_header" class = "noindex">
         <h1>CCASS Shareholding Search</h1>
-        <p class="lead">Connect to underlying database https://www.hkexnews.hk/sdw/search/searchsdw.aspx</p>
+        
     </div>
     <form name = "form1" action="/search" method="post" id = "form1" style = "text-align:left;" target="dummyframe">
         <div class="container content-container">
@@ -20,22 +21,22 @@
                     </li>
                     <li class="form-input stockCode">
                         <label for="inputStock">Stock Code</label>
-                        <input type="text" name="txtstockCode"></input>
+                        <input type="text" name="txtstockCode" placeholder="xxxxx"></input>
                     </li>
                     <li class="for-input threshold">
-                        <label for="threshold %">Threshold %</label>
+                        <label for="threshold %">Threshold % of the total number of Issued Shares/ Warrants/ Units</label>
                         <input type="text" name="txtThreshold"></input>
                     </li>
                 </div>
-                <div class="buttonGroup">
-                    <input value="TrendPlot" type ="submit" aria-label="trend plot" role="button" class="btn-blue"></input>
-                    <input value="TransactionFiner" type ="submit" aria-label="transaction finder" role="button" class="btn-blue"></input>
-                
-                </div>
             </section>
         </div>
+        <div class="buttonGroup">
+            <input value="Trend Plot" name="trendPlot" type ="submit" aria-label="trend plot" role="button" class="btn-blue"></input>
+            <input value="Transaction Finder" name="transactionFinder" type ="submit" aria-label="transaction finder" role="button" class="btn-blue"></input>
+        </div>
     </form>
+
+        
     
 </body>
 </html>
-                
